@@ -5,7 +5,7 @@ The purpose of this project is to be a tool for a group of students for educatio
 The application will serve as a major tool in Yedidim’s “end of the road” style activities.   
 
 Logo of Yedidim:
-[[https://github.com/username/repository/blob/master/img/octocat.png|alt=octocat]
+[[https://github.com/username/repository/blob/master/img/octocat.png|alt=octocat]]
 
 Product page:
 https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Product
