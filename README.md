@@ -25,3 +25,5 @@ https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/User-Manual
 User Page:
 https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Team-Page
 
+Inception/Planning Page:
+https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/inception
