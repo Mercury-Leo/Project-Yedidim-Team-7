@@ -8,24 +8,18 @@ The application will serve as a major tool in Yedidim’s “end of the road” 
 
 [Product page](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Product)
 
-Link of project chat room:
-https://gitter.im/yedidim
+[Link of project chat room](https://gitter.im/yedidim)
 
-Link for Task Management System:
-https://github.com/Mercury-Leo/Yedidim-Team-7/issues
+[Link for Task Management System](https://github.com/Mercury-Leo/Yedidim-Team-7/issues)
 
- Yedidim project is implemented under the course of Software Engineering at Azrieli College.
-Link for GitHub of the course:
-https://github.com/orgs/jce-il/teams/se2018b
+Yedidim project is implemented under the course of Software Engineering at Azrieli College.
 
-User Manual:
-https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/User-Manual
+[GitHub of the course](https://github.com/orgs/jce-il/teams/se2018b)
 
-User Page:
-https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Team-Page
+[User Manual](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/User-Manual)
 
-Inception/Planning Page:
-https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/inception
+[User Page](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Team-Page)
+
+[Inception/Planning Page](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/inception)
  
- Yedidim organization site:
- http://www.yedidim.org.il/home
+[Yedidim organization site](http://www.yedidim.org.il/home)
