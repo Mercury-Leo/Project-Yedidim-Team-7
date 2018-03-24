@@ -16,7 +16,7 @@ https://gitter.im/yedidim
 Link for Task Management System:
 https://github.com/Mercury-Leo/Yedidim-Team-7/issues
 
- Yedidim project is implemented under the course of Software Engineering at Azrieli College.   
+ Yedidim project is implemented under the course of Software Engineering at Azrieli College. \n  
 Link for GitHub of the course:
 https://github.com/orgs/jce-il/teams/se2018b
 
