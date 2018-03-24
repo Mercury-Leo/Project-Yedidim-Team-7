@@ -4,8 +4,7 @@ Purpose of the project:
 The purpose of this project is to be a tool for a group of students for educational and experiential activities of navigation in urban areas in order to get to know the culture, history and central cites in the defined navigation area.
 The application will serve as a major tool in Yedidim’s “end of the road” style activities.   
 
-Logo of Yedidim:![text](https://bit.ly/2I2Ee94)
-[[https://github.com/username/repository/blob/master/img/octocat.png|alt=octocat]]
+![text](https://bit.ly/2I2Ee94)
 
 Product page:
 https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Product
