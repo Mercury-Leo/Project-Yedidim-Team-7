@@ -19,4 +19,9 @@ https://github.com/Mercury-Leo/Yedidim-Team-7/issues
 Link for GitHub of the course:
 https://github.com/orgs/jce-il/teams/se2018b
 
+User Manual:
+https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/User-Manual
+
+User Page:
+https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Team-Page
 
