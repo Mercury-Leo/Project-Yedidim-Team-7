@@ -6,6 +6,8 @@ The application will serve as a major tool in Yedidim’s “end of the road” 
 
 ![logo](https://firebasestorage.googleapis.com/v0/b/exercice1-c7ffc.appspot.com/o/img6.jpg?alt=media&token=14d1e3b3-e471-4512-8071-a9d2c5585dc6)
 
+The [Kanban](https://github.com/Mercury-Leo/Yedidim-Team-7/projects/1) of the project
+
 [Product page](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Product)
 
 [Link of project chat room](https://gitter.im/yedidim)
