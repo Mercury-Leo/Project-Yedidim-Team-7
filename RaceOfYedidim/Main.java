@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import org.apache.commons.*;
+
 
 
 
@@ -38,11 +38,11 @@ public class Main {
     private String teamName;
 
 
-    public static void Main(String[] args) {
+    public  void Main(String[] args) {
         try {
             String hostname ="localhost";
             String port = "80";
-            connectToServe(hostname,port);
+            connectToServer(hostname,port);
         }
         catch ( Exception e)
         {}
