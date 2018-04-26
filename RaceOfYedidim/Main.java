@@ -49,19 +49,19 @@ public class Main {
 
     }
 
-    public void logoDisplay() {
+    private void logoDisplay() {
 
     }
-    public void screenOfHomeAndInscription() {
+    private void screenOfHomeAndInscription() {
 
     }
-    public void downloadActivityFile() {
+    private  void downloadActivityFile() {
 
     }
-    public void popMessageToPlayer() {
+    private void popMessageToPlayer() {
 
     }
-    public void getDataFromServer() {  ///
+    private void getDataFromServer() {  ///
         //  how to get data from  socket and write to .
 //  OutputStream outToServer = client.getOutputStream();
 //  DataOutputStream out = new DataOutputStream(outToServer);
@@ -71,38 +71,38 @@ public class Main {
 //  DataInputStream in = new DataInputStream(inFromServer);
 
     }
-    public void instructionsScreen() {
+    private void instructionsScreen() {
         // TODO implement here
     }
-    public void makeTeam() {
+    private void makeTeam() {
         // TODO implement here
     }
-    public void screenPlay() {
+    private void screenPlay() {
         // TODO implement here
     }
 
-    public void timerUpdateServer() {
+    private void timerUpdateServer() {
         // TODO implement here
     }
-    public void putMissionsOnMap() {
+    private void putMissionsOnMap() {
         // TODO implement here
     }
-    public void makePlayer() {
+    private void makePlayer() {
 
         // TODO implement here
     }
-    public void getMaps() {
+    private void getMaps() {
         // TODO implement here
 
 
     }
-    public void timerUpdateLocation() {
+    private void timerUpdateLocation() {
         // TODO implement here
     }
-    public void timerUpdateGameTime() {
+    private void timerUpdateGameTime() {
         // TODO implement here
     }
-    public void connectToServer(String serverName, String ports)throws IOException {
+    private void connectToServer(String serverName, String ports)throws IOException {
 
 
         int port = Integer.parseInt(ports);
@@ -123,10 +123,10 @@ public class Main {
 
     }
 
-    public void generateMission() {
+    private void generateMission() {
         // TODO implement here
     }
-    public void catchFakeGps(){
+    private void catchFakeGps(){
 
 
     }
