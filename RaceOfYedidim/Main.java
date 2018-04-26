@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import javax.print.DocFlavor;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
@@ -37,24 +38,28 @@ public class Main {
     private String teamName;
 
 
-
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
+    public static void Main(String[] args) {
+        try {
+            String hostname ="localhost";
+            String port = "80";
+            connectToServe(hostname,port);
+        }
+        catch ( Exception e)
+        {}
 
     }
-
 
     public void logoDisplay() {
-        // TODO implement here
+
     }
     public void screenOfHomeAndInscription() {
-        // TODO implement here
+
     }
     public void downloadActivityFile() {
-        // TODO implement here
+
     }
     public void popMessageToPlayer() {
-        // TODO implement here
+
     }
     public void getDataFromServer() {  ///
         //  how to get data from  socket and write to .
@@ -124,7 +129,14 @@ public class Main {
     public void catchFakeGps(){
 
 
-    }}
+    }
+
+
+
+
+
+
+}
 
 
 
