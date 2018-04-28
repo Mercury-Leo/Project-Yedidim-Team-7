@@ -58,6 +58,7 @@ public class Main {
     private void screenOfHomeAndInscription() {
 
     }
+
     private  void downloadActivityFile() throws Exception {
         int bytesRead;
         int current = 0;
