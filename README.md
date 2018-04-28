@@ -53,6 +53,5 @@ https://camo.githubusercontent.com/bd6d41802b4bb3ac34727080832cd308e07733f5/6874
 
 Round Summary:
 
-Next Iteration Planning:
 [Next Iteration Planning](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#next-iteration-planning)  
 
