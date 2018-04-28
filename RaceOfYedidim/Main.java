@@ -1,14 +1,7 @@
+import java.io.*;
 import java.util.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -18,8 +11,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
-
+import java.util.List;
+import java.util.Map ;
 
 
 public class Main {
@@ -30,22 +23,32 @@ public class Main {
     private int teamCode;
     private String language[];
     private String nameOfSchool;
-        private InetAddress serversIp;
+    private InetAddress serversIp;
     private double coordination;
     private Object Mission [];
     private int timeOutNavigate;
     private String instruction;
     private String teamName;
+    private Socket client ;
+    public final static String  FILE_TO_RECEIVED = "c:/temp/source-downloaded.pdf";
+     // you may change this, I give a different name because i don't want to overwrite the one used by server...
 
+    public final static int FILE_SIZE = 6022386; // file size temporary hard coded
+    // should bigger than the file to be downloaded
 
     public  void Main(String[] args) {
         try {
+            client=null;
             String hostname ="localhost";
             String port = "80";
             connectToServer(hostname,port);
+            downloadActivityFile();
+
         }
         catch ( Exception e)
-        {}
+        {
+
+        }
 
     }
 
@@ -55,20 +58,51 @@ public class Main {
     private void screenOfHomeAndInscription() {
 
     }
-    private  void downloadActivityFile() {
+    private  void downloadActivityFile() throws Exception {
+        int bytesRead;
+        int current = 0;
+        FileOutputStream fos = null;
+        BufferedOutputStream bos = null;
+
+        try {
+            System.out.println("Connecting...");
+
+            // receive file
+            byte [] mybytearray  = new byte [FILE_SIZE];
+            InputStream is = client.getInputStream();
+            fos = new FileOutputStream(FILE_TO_RECEIVED);
+            bos = new BufferedOutputStream(fos);
+            bytesRead = is.read(mybytearray,0,mybytearray.length);
+            current = bytesRead;
+
+            do {
+                bytesRead =
+                        is.read(mybytearray, current, (mybytearray.length-current));
+                if(bytesRead >= 0) current += bytesRead;
+            } while(bytesRead > -1);
+
+            bos.write(mybytearray, 0 , current);
+            bos.flush();
+            System.out.println("File " + FILE_TO_RECEIVED
+                    + " downloaded (" + current + " bytes read)");
+        } catch (FileNotFoundException e) {
+            throw new FileNotFoundException("FileNotFoundException");
+
+        } catch (IOException e) {
+            throw new IOException("IOException");
+        } finally {
+            if (fos != null) fos.close();
+            if (bos != null) bos.close();
+            if (client != null) client.close();
+        }
+
+    }
 
     }
     private void popMessageToPlayer() {
 
     }
     private void getDataFromServer() {  ///
-        //  how to get data from  socket and write to .
-//  OutputStream outToServer = client.getOutputStream();
-//  DataOutputStream out = new DataOutputStream(outToServer);
-//
-//  out.writeUTF("Hello from " + client.getLocalSocketAddress());
-//  InputStream inFromServer = client.getInputStream();
-//  DataInputStream in = new DataInputStream(inFromServer);
 
     }
     private void instructionsScreen() {
@@ -87,7 +121,7 @@ public class Main {
     private void putMissionsOnMap() {
         // TODO implement here
     }
-    private void makePlayer() {
+    private void makePlayer(int codeteam ) {
 
         // TODO implement here
     }
@@ -108,7 +142,7 @@ public class Main {
         int port = Integer.parseInt(ports);
         try {
             System.out.println("Connecting to " + serverName + " on port " + port);
-            Socket client = new Socket(serverName, port);
+             client = new Socket(serverName, port);
 
             System.out.println("Just connected to " + client.getRemoteSocketAddress());
             serversIp=InetAddress.getLocalHost();
