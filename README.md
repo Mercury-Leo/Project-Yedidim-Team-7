@@ -28,7 +28,7 @@ Yedidim project is implemented under the course of Software Engineering at Azrie
 
 
 
-Iteration 1 - Minimum viable product  
+## Iteration 1 - Minimum viable product  
 
 [Iteration Goals](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#iteration-goals)    
 
@@ -36,12 +36,11 @@ Iteration 1 - Minimum viable product
 
   
 ![Screenshot](https://camo.githubusercontent.com/ce9b647b44dd4882acbd4ce25a62d224de9d724e/68747470733a2f2f692e696d6775722e636f6d2f61734d3654527a2e706e67) 
-We were assisted by UML chart: 
+#### We were assisted by UML chart: 
 [Link UML](https://camo.githubusercontent.com/bd6d41802b4bb3ac34727080832cd308e07733f5/68747470733a2f2f692e696d6775722e636f6d2f74636a685856782e706e67)    
 
-Inter1:
 
-Assessment points planned for implementation:  
+#### Assessment points planned for implementation:  
 1. Continue the Admim app - Mercury  	
 2. Finish the class Mission - Omer  
 3. Start the class PlayerMenu - Ori  
@@ -57,6 +56,6 @@ Assessment points planned for implementation:
 
 
 
-Next Iteration Planning:
+#### Next Iteration Planning:
 [Inter2](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#next-iteration-planning)  
 
