@@ -1,4 +1,4 @@
-Yedidim Project:
+# Yedidim Project:
 
 Purpose of the project:
 The purpose of this project is to be a tool for a group of students for educational and experiential activities of navigation in urban areas in order to get to know the culture, history and central cites in the defined navigation area.
@@ -56,6 +56,6 @@ Yedidim project is implemented under the course of Software Engineering at Azrie
 
 
 
-#### Next Iteration Planning:
-[Inter2](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#next-iteration-planning)  
+### Next Iteration Planning:
+#### [Inter2](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#next-iteration-planning)  
 
