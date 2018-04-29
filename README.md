@@ -45,7 +45,7 @@ Assessment points planned for implementation:
 5. start the Xml (Android) - Schlomo  
 
 We were assisted by UML chart:  
-https://camo.githubusercontent.com/bd6d41802b4bb3ac34727080832cd308e07733f5/68747470733a2f2f692e696d6775722e636f6d2f74636a685856782e706e67    
+[Link UML](https://camo.githubusercontent.com/bd6d41802b4bb3ac34727080832cd308e07733f5/68747470733a2f2f692e696d6775722e636f6d2f74636a685856782e706e67)    
 
 [Code surveys](https://github.com/Mercury-Leo/Yedidim-Team-7/issues/13)      
 
