@@ -13,7 +13,10 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import java.util.List;
 import java.util.Map ;
-
+import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.ParseException;
+import org.json.simple.parser.JSONParser;
 
 public class Main {
 
@@ -66,7 +69,6 @@ public class Main {
         BufferedOutputStream bos = null;
 
         try {
-            System.out.println("Connecting...");
 
             // receive file
             byte [] mybytearray  = new byte [FILE_SIZE];
