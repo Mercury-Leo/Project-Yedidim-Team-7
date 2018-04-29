@@ -1,5 +1,7 @@
 # Yedidim Project:
 
+ #### Yedidim project is implemented under the course of Software Engineering at Azrieli College.
+
 Purpose of the project:
 The purpose of this project is to be a tool for a group of students for educational and experiential activities of navigation in urban areas in order to get to know the culture, history and central cites in the defined navigation area.
 The application will serve as a major tool in Yedidim’s “end of the road” style activities.   
@@ -13,8 +15,6 @@ The [Kanban](https://github.com/Mercury-Leo/Yedidim-Team-7/projects/1) of the pr
 [Link of project chat room](https://gitter.im/yedidim)
 
 [Link for Task Management System](https://github.com/Mercury-Leo/Yedidim-Team-7/issues)
-
-Yedidim project is implemented under the course of Software Engineering at Azrieli College.
 
 [GitHub of the course](https://github.com/orgs/jce-il/teams/se2018b)
 
