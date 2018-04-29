@@ -1,4 +1,6 @@
-Yedidim Project:
+# Yedidim Project:
+
+ #### Yedidim project is implemented under the course of Software Engineering at Azrieli College.
 
 Purpose of the project:
 The purpose of this project is to be a tool for a group of students for educational and experiential activities of navigation in urban areas in order to get to know the culture, history and central cites in the defined navigation area.
@@ -14,8 +16,6 @@ The [Kanban](https://github.com/Mercury-Leo/Yedidim-Team-7/projects/1) of the pr
 
 [Link for Task Management System](https://github.com/Mercury-Leo/Yedidim-Team-7/issues)
 
-Yedidim project is implemented under the course of Software Engineering at Azrieli College.
-
 [GitHub of the course](https://github.com/orgs/jce-il/teams/se2018b)
 
 [User Manual](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/User-Manual)
@@ -28,30 +28,34 @@ Yedidim project is implemented under the course of Software Engineering at Azrie
 
 
 
-Iteration 1 - Minimum viable product  
+## Iteration 1 - Minimum viable product  
 
 [Iteration Goals](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#iteration-goals)    
 
 [Team Members Roles](https://github.com/Mercury-Leo/Yedidim-Team-7/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Inter1+-+MVP%22)  
 
   
-![Screenshot](https://camo.githubusercontent.com/ce9b647b44dd4882acbd4ce25a62d224de9d724e/68747470733a2f2f692e696d6775722e636f6d2f61734d3654527a2e706e67)  
+![Screenshot](https://camo.githubusercontent.com/ce9b647b44dd4882acbd4ce25a62d224de9d724e/68747470733a2f2f692e696d6775722e636f6d2f61734d3654527a2e706e67) 
+#### We were assisted by UML chart: 
+[Link UML](https://camo.githubusercontent.com/bd6d41802b4bb3ac34727080832cd308e07733f5/68747470733a2f2f692e696d6775722e636f6d2f74636a685856782e706e67)    
 
-Assessment points planned for implementation:  
+
+#### Assessment points planned for implementation:  
 1. Continue the Admim app - Mercury  	
 2. Finish the class Mission - Omer  
 3. Start the class PlayerMenu - Ori  
 4. Continue the class Main - Osher+Schlomo  
 5. start the Xml (Android) - Schlomo  
 
-We were assisted by UML chart:  
-https://camo.githubusercontent.com/bd6d41802b4bb3ac34727080832cd308e07733f5/68747470733a2f2f692e696d6775722e636f6d2f74636a685856782e706e67    
+ 
+
 
 [Code surveys](https://github.com/Mercury-Leo/Yedidim-Team-7/issues/13)      
 
 [Meeting summaries](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#meeting-summaries) 
 
-Round Summary:
 
-[Next Iteration Planning](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#next-iteration-planning)  
+
+### Next Iteration Planning:
+#### [Inter2](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#next-iteration-planning)  
 
