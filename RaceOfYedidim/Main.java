@@ -1,23 +1,18 @@
-import java.io.*;
-import java.util.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+package com.example.schlomo.the_race;
+import com.firebase.client.AuthData;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.net.UnknownHostException;
-import javax.print.DocFlavor;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import java.util.List;
-import java.util.Map ;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
-
 public class Main {
 
 
@@ -26,32 +21,15 @@ public class Main {
     private int teamCode;
     private String language[];
     private String nameOfSchool;
-    private InetAddress serversIp;
     private double coordination;
     private Object Mission [];
     private int timeOutNavigate;
     private String instruction;
     private String teamName;
-    private Socket client ;
-    public final static String  FILE_TO_RECEIVED = "localhost/ActivityFile.json";
-     // you may change this, I give a different name because i don't want to overwrite the one used by server...
+    private Firebase rootRef;
 
-    public final static int FILE_SIZE = 6022386; // file size temporary hard coded
-    // should bigger than the file to be downloaded
 
-    public  void Main(String[] args) {
-        try {
-            client=null;
-            String hostname ="localhost";
-            String port = "80";
-            connectToServer(hostname,port);
-            downloadActivityFile();
-
-        }
-        catch ( Exception e)
-        {
-
-        }
+    public void Main() { //empty builder
 
     }
 
@@ -62,52 +40,31 @@ public class Main {
 
     }
 
-    private  void downloadActivityFile() throws Exception {
-        int bytesRead;
-        int current = 0;
-        FileOutputStream fos = null;
-        BufferedOutputStream bos = null;
+    public  int getDataFromServer() {
+        // Create a reference from an HTTPS URL
+// Note that in the URL, characters are URL escaped!
+        StorageReference storageRef = storage.getReferenceFromUrl("https://yedidim-a05ec.firebaseio.com");
+        islandRef = storageRef.child("activityFile");
 
-        try {
+        File localFile = File.createTempFile("File", "json");
 
-            // receive file
-            byte [] mybytearray  = new byte [FILE_SIZE];
-            InputStream is = client.getInputStream();
-            fos = new FileOutputStream(FILE_TO_RECEIVED);
-            bos = new BufferedOutputStream(fos);
-            bytesRead = is.read(mybytearray,0,mybytearray.length);
-            current = bytesRead;
-
-            do {
-                bytesRead =
-                        is.read(mybytearray, current, (mybytearray.length-current));
-                if(bytesRead >= 0) current += bytesRead;
-            } while(bytesRead > -1);
-
-            bos.write(mybytearray, 0 , current);
-            bos.flush();
-            System.out.println("File " + FILE_TO_RECEIVED
-                    + " downloaded (" + current + " bytes read)");
-        } catch (FileNotFoundException e) {
-            throw new FileNotFoundException("FileNotFoundException");
-
-        } catch (IOException e) {
-            throw new IOException("IOException");
-        } finally {
-            if (fos != null) fos.close();
-            if (bos != null) bos.close();
-            if (client != null) client.close();
-        }
-
+        islandRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                // Local temp file has been created
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+            }
+        });
     }
-
 
     private void popMessageToPlayer() {
 
     }
-    private void getDataFromServer() {  ///
 
-    }
     private void instructionsScreen() {
         // TODO implement here
     }
@@ -118,9 +75,7 @@ public class Main {
         // TODO implement here
     }
 
-    private void timerUpdateServer() {
-        // TODO implement here
-    }
+
     private void putMissionsOnMap() {
         // TODO implement here
     }
@@ -133,31 +88,17 @@ public class Main {
 
 
     }
+    private void timerUpdateServer() {
+        // TODO implement here
+    }
     private void timerUpdateLocation() {
         // TODO implement here
     }
     private void timerUpdateGameTime() {
         // TODO implement here
     }
-    private void connectToServer(String serverName, String ports)throws IOException {
-
-
-        int port = Integer.parseInt(ports);
-        try {
-            System.out.println("Connecting to " + serverName + " on port " + port);
-             client = new Socket(serverName, port);
-
-            System.out.println("Just connected to " + client.getRemoteSocketAddress());
-            serversIp=InetAddress.getLocalHost();
-
-        } catch (UnknownHostException e ){
-            throw new UnknownHostException("Get ip failed");
-        }
-        catch (IOException e) {
-            throw new IOException("Connection failed");
-
-        }
-
+    public void connectToServer( ) {
+        rootRef = new Firebase("https://yedidim-a05ec.firebaseio.com");
     }
 
     private void generateMission() {
@@ -174,6 +115,17 @@ public class Main {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
