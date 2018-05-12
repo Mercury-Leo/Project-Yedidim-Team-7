@@ -13,6 +13,7 @@ public class FirstActivity extends AppCompatActivity {
     ImageButton enter;
     EditText code;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
