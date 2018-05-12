@@ -3,7 +3,7 @@
       <h3>התחברות מנהל</h3>
       <input type = "text" placeholder="User" v-model="User_name"><br>
       <input type = "password" placeholder = "Password" v-model="User_pass"><br>
-      <button @click = "Log_User"><router-link to="Control"></router-link>Login</button>
+      <button @click = "Log_User"><router-link to="Control"></router-link>התחברות</button>
       <p>פרטים להתחברות ניתן לקבל מעמותת ידידים.</p>
     </div>
 </template>
