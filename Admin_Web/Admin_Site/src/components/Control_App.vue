@@ -1,30 +1,27 @@
 <template>
   <div>
-
-
-  <div >
-    <h1>Testing stuff</h1>
-  </div>
-  <div >
-    <div>
-      <h3>Team list</h3>
-    </div>
-
-  </div>
-  <p>Enter team id</p>
-  <input type = "text" id = "team_id" v-model = "newTeam.id">
-
-  <button @click = "addData">
-    Submit
-  </button>
-  <table>
-    <tr>
-      Id
-    </tr>
-    <tr v-for=" team in test" >
-      {{team.id}}
-    </tr>
-  </table>
+    <p>ניהול משחק ידידים</p>
+    <p>
+      מלאו את הפרטים של הניווט בשביל להתחיל משחק.
+    </p>
+    <form>
+      <label :for = "start_time">זמן תחילת ניווט</label>
+      <input type = "time" v-model="start_time">
+      <label :for = "end_time">זמן סיום נייוט</label>
+      <input type = "time" v-model="end_time"><br>
+      <label :for = "instructor_name" >שם מדריך</label>
+      <input type = "text" v-model="instructor_name"><br>
+      <label :for = "instructor_phone">טלפון מדריך</label>
+      <input type = "number" v-model="instructor_phone">
+      <label :for = "school_name" >שם בית הספר</label>
+      <input type = "text" v-model="school_name"><br>
+      <label :for="navigation_area" >אזור ניווט</label>
+      <select>
+        <option value = "jer" >ירושלים</option>
+        <option value = "negev">נגב</option>
+      </select>
+    </form>
+    <button @click = "submit_init">התחל ניווט</button>
   </div>
 </template>
 
@@ -56,6 +53,24 @@
         return {
           newTeam: {
             id: 0
+          },
+          start_time: {
+
+          },
+          end_time: {
+
+          },
+          instructor_name: {
+
+          },
+          instructor_phone: {
+
+          },
+          school_name: {
+
+          },
+          navigation_area: {
+
           }
         }
       },
@@ -63,6 +78,9 @@
         addData: function(){
           team.push(this.newTeam);
           this.newTeam.id = 0;
+        },
+        submit_init: function(){
+          this.$router.push('Manage');
         }
       }
     }

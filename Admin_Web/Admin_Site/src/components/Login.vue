@@ -1,10 +1,10 @@
 <template>
     <div class = "login">
-      <h3>Sign In</h3>
+      <h3>התחברות מנהל</h3>
       <input type = "text" placeholder="User" v-model="User_name"><br>
       <input type = "password" placeholder = "Password" v-model="User_pass"><br>
       <button @click = "Log_User"><router-link to="Control"></router-link>Login</button>
-      <p>Get login information from Yedidim.</p>
+      <p>פרטים להתחברות ניתן לקבל מעמותת ידידים.</p>
     </div>
 </template>
 
