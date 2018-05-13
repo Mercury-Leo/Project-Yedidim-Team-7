@@ -1,10 +1,12 @@
 <template>
     <div class = "login">
       <h3>התחברות מנהל</h3>
-      <input type = "text" placeholder="User" v-model="User_name"><br>
-      <input type = "password" placeholder = "Password" v-model="User_pass"><br>
-      <button @click = "Log_User"><router-link to="Control"></router-link>התחברות</button>
-      <p>פרטים להתחברות ניתן לקבל מעמותת ידידים.</p>
+      <input type = "text" placeholder="משתמש" v-model="User_name"><br>
+      <input type = "password" placeholder = "סיסמה" v-model="User_pass"><br><br>
+
+      <b-button @click = "Log_User" >התחברות</b-button>
+
+      <p>פרטים להתחברות ניתן לקבל מעמותת ידידים</p>
     </div>
 </template>
 
@@ -23,11 +25,12 @@
       methods: {
         Log_User: function() {
           if(this.Server_name == this.User_name && this.Server_pass == this.User_pass){
-            console.log("did it");
             this.$router.push('Control');
+            return true;
           }
           else{
-            alert("Wrong password or Username.");
+            alert("שם משתמש או סיסמה לא נכונים");
+            return false;
           }
         }
       }

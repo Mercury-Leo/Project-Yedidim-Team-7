@@ -1,18 +1,21 @@
 <template>
-
-
   <div id="app">
-    <div >
-      <router-view></router-view>
-    </div>
+
+    <Top_Nav></Top_Nav>
+
+    <router-view></router-view>
+
   </div>
 </template>
 
 <script>
+import topnav from './components/Top_Nav'
 
 
+var Top_Nav = topnav;
 export default {
-  name: 'App'
+  name: 'App',
+  components: {Top_Nav}
 }
 </script>
 
@@ -23,6 +26,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #42A4B7;
 }
 </style>
