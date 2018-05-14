@@ -1,14 +1,14 @@
 <template>
   <div>
     <p>
-      כאן יהיה הסבר על החלקים באתר
+      Send a team a message
     </p>
   </div>
 </template>
 
 <script>
     export default {
-        name: "Home"
+        name: "Send_Team_Message"
     }
 </script>
 

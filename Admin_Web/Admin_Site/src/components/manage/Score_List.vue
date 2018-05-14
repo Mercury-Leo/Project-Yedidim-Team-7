@@ -1,14 +1,15 @@
 <template>
   <div>
     <p>
-      כאן יהיה הסבר על החלקים באתר
+      Here is teams score
     </p>
+
   </div>
 </template>
 
 <script>
     export default {
-        name: "Home"
+        name: "Score_List"
     }
 </script>
 

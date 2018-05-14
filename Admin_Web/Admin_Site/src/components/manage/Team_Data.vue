@@ -1,14 +1,15 @@
 <template>
   <div>
+
     <p>
-      כאן יהיה הסבר על החלקים באתר
+      here you can see the teams data
     </p>
   </div>
 </template>
 
 <script>
     export default {
-        name: "Home"
+        name: "Team_Data"
     }
 </script>
 

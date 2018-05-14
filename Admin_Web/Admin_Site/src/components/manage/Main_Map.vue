@@ -1,14 +1,14 @@
 <template>
   <div>
     <p>
-      כאן יהיה הסבר על החלקים באתר
+      Main google map is here
     </p>
   </div>
 </template>
 
 <script>
     export default {
-        name: "Home"
+        name: "Main_Map"
     }
 </script>
 

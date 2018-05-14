@@ -1,14 +1,14 @@
 <template>
   <div>
     <p>
-      כאן יהיה הסבר על החלקים באתר
+      This will be mission control
     </p>
   </div>
 </template>
 
 <script>
     export default {
-        name: "Home"
+        name: "Missions"
     }
 </script>
 
