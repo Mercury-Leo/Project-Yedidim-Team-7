@@ -51,10 +51,6 @@
       }
     },
     methods: {
-      addData: function(){
-        team.push(this.newTeam);
-        this.newTeam.id = 0;
-      },
       submit_init: function(){
         this.$router.push('Manage');
       }

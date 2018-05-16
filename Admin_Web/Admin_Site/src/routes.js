@@ -1,5 +1,4 @@
 import Login from './components/Login'
-import Control from './components/Control_App'
 import Home from './Home'
 import Missions from './components/init/Missions'
 import Nav_data from './components/init/Navigation_Data'
@@ -47,10 +46,6 @@ export const routes = [
   {
     path: '/Nav data',
     component: Nav_data
-  },
-  {
-    path: '/Control',
-    component: Control
   },
   {
     path: '/Home',
