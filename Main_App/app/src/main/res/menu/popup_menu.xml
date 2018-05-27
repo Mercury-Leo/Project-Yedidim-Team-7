@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/pop_Mission"
+    android:title="@string/Mission"></item>
+<item
+    android:id="@+id/pop_Scores"
+    android:title="@string/scores"></item>
+<item
+    android:id="@+id/pop_Instruction"
+    android:title="@string/instruction"></item>
+<item
+    android:id="@+id/pop_MyLocation"
+    android:title="@string/location"></item>
+<item
+    android:id="@+id/pop_LastLocation"
+    android:title="@string/navEnd"></item>
+<item
+    android:id="@+id/pop_Help"
+    android:title="@string/Help"></item>
+
+</menu>
