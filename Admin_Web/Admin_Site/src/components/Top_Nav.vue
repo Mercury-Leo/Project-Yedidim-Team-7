@@ -6,7 +6,7 @@
         <b-collapse is-nav id="nav_dropdown_collapse">
           <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown text="משתמש" right>
-              <b-dropdown-item @click = "User_Logout" class = "Fix_Hebrew">התנתקות</b-dropdown-item>
+              <b-dropdown-item @click = "$router.push('/')" class = "Fix_Hebrew">התנתקות</b-dropdown-item>
             </b-nav-item-dropdown>
             <!-- Navbar dropdowns -->
             <b-nav-item-dropdown text="אתחול" right >
@@ -23,7 +23,7 @@
               <b-dropdown-item @click = "$router.push('main map')" class = "Fix_Hebrew">מפה ראשית</b-dropdown-item>
             </b-nav-item-dropdown>
 
-            <b-nav-item @click = "Move_to_home">בית</b-nav-item>
+            <b-nav-item @click = "$router.push('Home')">בית</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>

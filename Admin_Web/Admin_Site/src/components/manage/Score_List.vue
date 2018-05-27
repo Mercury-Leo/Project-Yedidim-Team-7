@@ -1,15 +1,18 @@
 <template>
   <div>
-    <p>
-      Here is teams score
-    </p>
-
   </div>
+
 </template>
 
 <script>
+
     export default {
-        name: "Score_List"
+        name: "Score_List",
+      data () {
+        return {
+          items: items
+        }
+      }
     }
 </script>
 

@@ -24,7 +24,7 @@
       </select>
       <label :for="area" >אזור ניווט</label>
     </form>
-    <button @click = "submit_init">התחל ניווט</button>
+    <button @click = "$router.push('Teams')">התחל ניווט</button>
   </div>
 </template>
 

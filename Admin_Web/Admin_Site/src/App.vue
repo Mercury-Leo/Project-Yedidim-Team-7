@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    <tdd></tdd>
     <Top_Nav></Top_Nav>
 
     <router-view></router-view>
@@ -10,12 +10,14 @@
 
 <script>
 import topnav from './components/Top_Nav'
-
-
+import teamdata from './components/Team_Table'
+var tdd = teamdata;
 var Top_Nav = topnav;
 export default {
   name: 'App',
-  components: {Top_Nav}
+  components: {Top_Nav,
+                tdd
+              }
 }
 </script>
 

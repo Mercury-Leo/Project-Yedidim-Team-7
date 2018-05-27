@@ -4,7 +4,7 @@
       <input type = "text" placeholder="משתמש" v-model="User_name"><br>
       <input type = "password" placeholder = "סיסמה" v-model="User_pass"><br><br>
 
-      <b-button @click = "Log_User" >התחברות</b-button>
+      <b-button @click = "$router.push('Home')" >התחברות</b-button>
 
       <p>פרטים להתחברות ניתן לקבל מעמותת ידידים</p>
     </div>
