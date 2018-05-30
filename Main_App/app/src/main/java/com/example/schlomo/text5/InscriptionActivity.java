@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import com.example.schlomo.text6.R;
 
 public class InscriptionActivity extends AppCompatActivity {
     EditText telNum;

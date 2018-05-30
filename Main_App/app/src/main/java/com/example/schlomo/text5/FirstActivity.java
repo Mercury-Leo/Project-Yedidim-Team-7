@@ -8,11 +8,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.example.schlomo.text6.R;
+
 public class FirstActivity extends AppCompatActivity {
 
     ImageButton enter;
     EditText code;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,15 +50,17 @@ public class FirstActivity extends AppCompatActivity {
                     else if (numCode < 10000) {
                         System.out.println("is a player");
                         startActivity(intent2);
+                        finish();
                     } else {
                         System.out.println("is a team head ");
                         startActivity(intent);
+                    finish();
                     }
 
                 }
                 else
                 startActivity(intent2);
-
+finish();
             }
         });
     }
