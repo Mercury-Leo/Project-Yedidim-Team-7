@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-
+import com.example.schlomo.text6.R;
 public class HelpActivity extends AppCompatActivity {
     ImageButton exit;
 

@@ -6,6 +6,10 @@
           <option name="url" value="https://github.com/Mercury-Leo/Yedidim-Team-7.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/jce-il-ex/se18b-ex4-tdd-Mercury-Leo.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\User\WebstormProjects" />

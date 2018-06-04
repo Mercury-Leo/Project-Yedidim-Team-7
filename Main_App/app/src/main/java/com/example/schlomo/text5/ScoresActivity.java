@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class ScoresActivity extends AppCompatActivity {
+import com.example.schlomo.text6.R;
+
+public class    ScoresActivity extends AppCompatActivity {
 
     ImageButton exit;
     @Override
