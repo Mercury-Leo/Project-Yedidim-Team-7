@@ -1,6 +1,30 @@
 <template>
   <div>
-    <b-table striped hover :items="items"></b-table>
+
+    <table>
+
+      <thead>
+      <tr>
+        <th>
+          שם קבוצה
+        </th>
+        <th>
+          קוד קבוצה
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for = "team in test">
+        <td>
+          {{team.teamName}}
+        </td>
+        <td>
+          {{team.teamCode}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
   </div>
 </template>
 
@@ -10,15 +34,20 @@
 
   let team  = firebase.ref('teams');
 
-
-  const items = [
-    { Team_Code: 55,Team_Name: "a" },
-    { Team_Code: 45, Team_Name: "b" },
-    { Team_Code: 35, Team_Name: "c"}
-  ]
+  var teams = [];
 
     export default {
-        name: "Team_Table"
+        name: "Team_Table",
+        data () {
+        return {
+
+        }
+      },
+      firebase: {
+          test: team
+      },
+
+
     }
 </script>
 

@@ -10,9 +10,21 @@
     </div>
 </template>
 
-<script>
 
-    export default {
+
+<script>
+  import Vue from 'vue'
+  Vue.mixin({
+    data: function() {
+      return {
+        get globalReadOnlyProperty() {
+          return "Can't change me!";
+        }
+      }
+    }
+  })
+
+  export default {
         name: "Login",
         data: function() {
           return {
