@@ -3,7 +3,7 @@
 
     <Top_Nav></Top_Nav>
     <router-view></router-view>
-
+    <p>test</p>
   </div>
 </template>
 
@@ -19,9 +19,6 @@ Vue.mixin({
         this.$router.push('/');
       }
     }
-  },
-  mounted() {
-    this.Is_Logged();
   },
   beforeMount(){
     this.Is_Logged();
