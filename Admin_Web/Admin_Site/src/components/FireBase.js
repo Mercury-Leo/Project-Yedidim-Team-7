@@ -12,6 +12,7 @@ let config = {
 
 };
 
+
 let app = Firebase.initializeApp(config);
 let db = app.database();
 

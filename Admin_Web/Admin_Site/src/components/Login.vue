@@ -4,7 +4,7 @@
       <input type = "text" placeholder="משתמש" v-model="User_name"><br>
       <input type = "password" placeholder = "סיסמה" v-model="User_pass"><br><br>
 
-      <b-button @click = "$router.push('Home')" >התחברות</b-button>
+      <b-button @click = Log_User >התחברות</b-button>
 
       <p>פרטים להתחברות ניתן לקבל מעמותת ידידים</p>
     </div>
@@ -14,16 +14,7 @@
 
 <script>
   import Vue from 'vue'
-  Vue.mixin({
-    data: function() {
-      return {
-        get globalReadOnlyProperty() {
-          return "Can't change me!";
-        }
-      }
-    }
-  })
-
+  Vue.use(require('vue-cookies'));
   export default {
         name: "Login",
         data: function() {
@@ -37,7 +28,8 @@
       methods: {
         Log_User: function() {
           if(this.Server_name == this.User_name && this.Server_pass == this.User_pass){
-            this.$router.push('Control');
+            this.$cookies.set("User_Logged","25j_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX","0");
+            this.$router.push('Home');
             return true;
           }
           else{
