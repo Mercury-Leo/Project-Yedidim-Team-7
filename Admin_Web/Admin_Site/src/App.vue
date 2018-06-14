@@ -3,15 +3,28 @@
 
     <Top_Nav></Top_Nav>
     <router-view></router-view>
-
+    <p>test</p>
   </div>
 </template>
 
 <script>
 import topnav from './components/Top_Nav'
 
-var Top_Nav = topnav;
+let Top_Nav = topnav;
+import Vue from 'vue'
+Vue.mixin({
+  methods: {
+    Is_Logged: function () {
+      if(!(this.$cookies.isKey("User_Logged"))){
+        this.$router.push('/');
+      }
+    }
+  },
+  beforeMount(){
+    this.Is_Logged();
+  }
 
+});
 export default {
   name: 'App',
   components: {Top_Nav}

@@ -3,12 +3,12 @@ import Firebase from 'firebase'
 
 let config = {
 
-  apiKey: "AIzaSyBhZ7e-fF4i5w8tlxrEP97wO3A8nDCx09k",
-  authDomain: "yedidim-a05ec.firebaseapp.com",
-  databaseURL: "https://yedidim-a05ec.firebaseio.com",
-  projectId: "yedidim-a05ec",
-  storageBucket: "yedidim-a05ec.appspot.com",
-  messagingSenderId: "183472267803"
+  apiKey: "AIzaSyB_4Q03kH4GClmLrBeESuhzuxgAICZ9MUk",
+  authDomain: "teams-yedidim.firebaseapp.com",
+  databaseURL: "https://teams-yedidim.firebaseio.com",
+  projectId: "teams-yedidim",
+  storageBucket: "teams-yedidim.appspot.com",
+  messagingSenderId: "825991088727"
 
 };
 

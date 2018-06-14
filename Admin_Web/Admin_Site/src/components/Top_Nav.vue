@@ -6,7 +6,7 @@
         <b-collapse is-nav id="nav_dropdown_collapse">
           <b-navbar-nav class="ml-auto">
             <b-nav-item-dropdown text="משתמש" right>
-              <b-dropdown-item @click = "$router.push('/')" class = "Fix_Hebrew">התנתקות</b-dropdown-item>
+              <b-dropdown-item @click = "Log_out" class = "Fix_Hebrew">התנתקות</b-dropdown-item>
             </b-nav-item-dropdown>
             <!-- Navbar dropdowns -->
             <b-nav-item-dropdown text="אתחול" right >
@@ -38,7 +38,10 @@
     export default {
         name: "Top_Nav",
         methods: {
-
+          Log_out: function () {
+            this.$cookies.remove("User_Logged");
+           this.$router.push('/');
+          }
         }
     }
 </script>
