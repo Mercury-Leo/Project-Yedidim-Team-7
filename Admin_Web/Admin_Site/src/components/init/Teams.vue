@@ -15,14 +15,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr v-for = "team in test">
-        <td>
-          {{team.teamName}}
-        </td>
-        <td>
-          {{team.teamCode}}
-        </td>
-      </tr>
+
       </tbody>
     </table>
     <p>team code</p><input type = "number" v-model="Team.teamCode"><br>
@@ -37,36 +30,31 @@
 
   import firebase from '../FireBase'
 
-  let team  = firebase.ref('teams');
+  let Team_List  = firebase.ref('start');
 
 
   export default {
     name: "Teams",
     firebase: {
-      test: team
+      Teams_Array: Team_List
     },
     data()  {
       return {
         Team: {
-          Score: 7,
-          teamCode: 55555,
-          teamName: 'black panther',
-          telNum: 911,
-          NumberOfMission: 0
-        },
-        CityName: {
-
-
+          done: 0,
+          ip: "127.0.0.1",
+          mission: [],
+          point: 0,
+          teamCode: 12345,
+          teamHead: "leader",
+          teamName: "team_name",
+          teamNum: "100"
         }
       }
     },
     methods: {
       addData: function () {
-        team.push(this.Team);
-        this.Team.Score = 0;
-        this.Team.teamCode = 0;
-        this.Team.teamName = '';
-        this.Team.telNum = 0;
+
 
       },
     }

@@ -3,7 +3,7 @@
 
     <Top_Nav></Top_Nav>
     <router-view></router-view>
-    <p>test</p>
+
   </div>
 </template>
 
@@ -18,10 +18,18 @@ Vue.mixin({
       if(!(this.$cookies.isKey("User_Logged"))){
         this.$router.push('/');
       }
+    },
+    Load_page: function() {
+      alert("hey");
+      this.$router.push(this.$route.fullPath);
     }
   },
+
   beforeMount(){
+
     this.Is_Logged();
+    //this.Load_page();
+
   }
 
 });
@@ -39,6 +47,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: #42A4B7;
+  background-color: #2bb3ce;
 }
 </style>

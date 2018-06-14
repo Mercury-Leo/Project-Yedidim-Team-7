@@ -5,14 +5,12 @@
 </template>
 
 <script>
+  import firebase from '../FireBase'
+
+  let team  = firebase.ref('teams');
 
     export default {
         name: "Score_List",
-      data () {
-        return {
-          items: items
-        }
-      }
     }
 </script>
 
