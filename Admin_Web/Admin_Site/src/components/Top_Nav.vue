@@ -15,11 +15,11 @@
               <b-dropdown-item @click = "$router.push('Missions')" class = "Fix_Hebrew">משימות</b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item-dropdown text="ניהול" right>
-              <b-dropdown-item @click = "$router.push('Send Message')" class = "Fix_Hebrew">שליחת הודעה</b-dropdown-item>
+
               <b-dropdown-item @click = "$router.push('Team Data')" class = "Fix_Hebrew">נתוני קבוצה</b-dropdown-item>
               <b-dropdown-item @click = "$router.push('Points')" class = "Fix_Hebrew">שתילת נקודה</b-dropdown-item>
               <b-dropdown-item @click = "$router.push('Nav end')" class = "Fix_Hebrew">סיום ניווט</b-dropdown-item>
-              <b-dropdown-item @click = "$router.push('main map')" class = "Fix_Hebrew">מפה ראשית</b-dropdown-item>
+              <b-dropdown-item @click = "$router.push('Send Message')" class = "Fix_Hebrew">שליחת הודעה</b-dropdown-item>
             </b-nav-item-dropdown>
 
             <b-nav-item @click = "$router.push('Home')">בית</b-nav-item>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>בבניה - לא פעיל</p>
     <b-form-textarea id="textarea1"
                      v-model="text"
                      placeholder="הכנס הודעה"

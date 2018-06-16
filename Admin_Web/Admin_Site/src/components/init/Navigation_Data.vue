@@ -119,7 +119,8 @@
       push_init: function () {
         if(this.Create_Start()){
           if(this.Create_Teams()){
-            this.$router.push('Missions')
+            this.Create_Cookie();
+            this.$router.push('Home')
           }
         }
       },
@@ -159,7 +160,9 @@
         let i = 0;
         let team_code_rand = 0;
         if(this.$data.Team_num.Team_Count > 0 && this.$data.Team_num.Team_Count < 51 && this.$data.Diff.difficult >= 0 && this.$data.Diff.difficult <4){
-          for( i ; i < this.$data.Team_num.Team_Count; i++) {
+          console.log(this.$data.Team_num.Team_Count);
+          for( i = 0 ; i < this.$data.Team_num.Team_Count; i++) {
+
             team_code_rand = random_num[i];
 
             this.$firebaseRefs.TeamArray.push({
@@ -181,7 +184,9 @@
           alert("ניתן לייצר עד 50 קבוצות ורמת קושי בין 0 ל3");
           return false;
         }
+
         this.Get_Keys();
+
         let Team_obj = [];
         let mission_ref = mdb.ref(this.$data.navigation_area.area).child("num");
 
@@ -198,6 +203,7 @@
         return true;
       },
       Get_Keys: function () {
+        team_key_list = [];
         this.$firebaseRefs.TeamArray.once("value",function(snapshot){
           snapshot.forEach(function(child){
             team_key_list.push(child.key);
@@ -208,7 +214,6 @@
         let i = 0;
         for(i; i< this.$data.Team_num.Team_Count; i++){
           let randomnumber = Math.floor(Math.random()*100000) + 1;
-          console.log(randomnumber);
           if(random_num.indexOf(randomnumber) > -1 ) continue;
           if(randomnumber.toString().length != 5){
             i--;
@@ -218,8 +223,20 @@
           }
 
         }
+      },
+      Create_Cookie: function () {
+        this.$cookies.set("Teams_Made","27j_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX","0");
+      },
+      Teams_Created: function(){
+        if((this.$cookies.isKey("Teams_Made"))){
+          alert("קבוצות כבר קיימות");
+          this.$router.push('/Home');
+        }
       }
       },
+    beforeMount(){
+      this.Teams_Created();
+    }
 
   }
 </script>

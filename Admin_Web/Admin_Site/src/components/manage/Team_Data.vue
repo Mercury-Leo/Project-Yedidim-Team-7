@@ -2,11 +2,11 @@
   <div>
 
     <p>מספר קבוצות פעילות</p>
-    <p>{{Team_Num}}</p>
+    <p>{{counter}}</p>
 
   <table id ="table_style" align="center">
     <tr>
-
+      <th>טלפון של ראש קבוצה</th>
       <th> ראש קבוצה</th>
       <th>משימות שבוצעו</th>
       <th>ניקוד</th>
@@ -15,8 +15,8 @@
 
     </tr >
 
-    <tr v-for = "team in Team_Array">
-
+    <tr v-for = "team in Team_Array" id = "Lazy_Count">
+      <td>{{team['teamNum']}}</td>
       <td>{{team['teamHead']}}</td>
       <td>{{team['done']}}</td>
       <td>{{team['point']}}</td>
@@ -34,7 +34,6 @@
         name: "Team_Data",
       firebase: {
         Team_Array: firebase.ref('Teams'),
-        //Team_count: firebase.ref('start').child("numOfTeam")
       },
       method: {
           Get_Team_Num: function () {
@@ -47,12 +46,12 @@
       },
       data(){
           return{
-            Team_Num: 0
+            Team_Num: 0,
+            counter: 0
           }
       },
-      beforeMount(){
-          this.Get_Team_Num();
-      }
+
+
     }
 </script>
 

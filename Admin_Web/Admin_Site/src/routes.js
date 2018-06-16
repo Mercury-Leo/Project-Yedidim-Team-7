@@ -28,10 +28,6 @@ export const routes = [
     component: Points
   },
   {
-    path: '/main map',
-    component: Map
-  },
-  {
     path: '/Nav end',
     component: Nav_end
   },
