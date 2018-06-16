@@ -7,7 +7,6 @@
 
     </p>
     <br>
-    <b-table striped hover :items="items"></b-table>
     <table class = "home_table"  >
       <tr>
         <th class = "Fix_Hebrew">
@@ -50,15 +49,7 @@
 </template>
 
 <script>
-  const items = [
-    { isActive: true, age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-    { isActive: false, age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-    { isActive: false, age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-    { isActive: true, age: 38, first_name: 'Jami', last_name: 'Carney' }
-  ]
-
-
-    export default {
+export default {
         name: "Home",
     }
 </script>
@@ -66,6 +57,7 @@
 <style scoped>
   .home_table {
     text-align: -webkit-center;
+    margin-left: 50%;
   }
   .Fix_Hebrew{
     text-align: -webkit-right;
