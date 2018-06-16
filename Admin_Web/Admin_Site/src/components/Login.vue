@@ -36,8 +36,18 @@
             alert("שם משתמש או סיסמה לא נכונים");
             return false;
           }
+        },
+        Is_Logged:function () {
+          if((this.$cookies.isKey("User_Logged"))){
+            this.$router.push('/Home');
+          }
         }
-      }
+
+      },
+    beforeMount() {
+      this.Is_Logged();
+    }
+
     }
 </script>
 

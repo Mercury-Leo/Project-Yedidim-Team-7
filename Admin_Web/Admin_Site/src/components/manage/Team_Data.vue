@@ -1,18 +1,67 @@
 <template>
   <div>
 
-    <p>
-      here you can see the teams data
-    </p>
+    <p>מספר קבוצות פעילות</p>
+    <p>{{Team_Num}}</p>
+
+  <table id ="table_style" align="center">
+    <tr>
+
+      <th> ראש קבוצה</th>
+      <th>משימות שבוצעו</th>
+      <th>ניקוד</th>
+      <th>קוד קבוצה</th>
+      <th>שם קבוצה</th>
+
+    </tr >
+
+    <tr v-for = "team in Team_Array">
+
+      <td>{{team['teamHead']}}</td>
+      <td>{{team['done']}}</td>
+      <td>{{team['point']}}</td>
+      <td>{{team['teamCode']}}</td>
+      <td>{{team['teamName']}}</td>
+    </tr>
+  </table>
   </div>
 </template>
 
 <script>
+  import firebase from '../FireBase'
+
     export default {
-        name: "Team_Data"
+        name: "Team_Data",
+      firebase: {
+        Team_Array: firebase.ref('Teams'),
+        //Team_count: firebase.ref('start').child("numOfTeam")
+      },
+      method: {
+          Get_Team_Num: function () {
+            let Team_Count = firebase.ref('start').child("numOfTeam");
+            Team_Count.on("value", function(snapshot){
+              this.$data.Team_Num = snapshot.val();
+            })
+
+          }
+      },
+      data(){
+          return{
+            Team_Num: 0
+          }
+      },
+      beforeMount(){
+          this.Get_Team_Num();
+      }
     }
 </script>
 
 <style scoped>
-
+  #table_style{
+    margin-top:5%;
+  }
+  table, th, td {
+    border: 1px solid black;
+    background-color: white;
+  }
 </style>

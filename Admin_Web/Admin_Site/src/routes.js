@@ -24,10 +24,6 @@ export const routes = [
     component: Team_Data
   },
   {
-    path: '/Scores',
-    component: Score
-  },
-  {
     path: '/points',
     component: Points
   },
