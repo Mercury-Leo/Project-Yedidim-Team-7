@@ -22,7 +22,7 @@ firebade deploy
 ```
 ```
 # Production site
-(Admin Site)[https://yedidim-a05ec.firebaseapp.com/]
+[Admin Site](https://yedidim-a05ec.firebaseapp.com/)
 ```
 [Admin Site](https://yedidim-a05ec.firebaseapp.com/)
 
