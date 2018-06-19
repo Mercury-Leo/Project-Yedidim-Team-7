@@ -15,45 +15,48 @@ export const routes = [
     path: '/',
     component: Login
   },
+  /*
   {
-    path: '/Send Message',
+    path: '/send-message',
     component: Send_Msg
-  },
+  },*/
   {
-    path: '/Team Data',
+    path: '/team-data',
     component: Team_Data
   },
-  {
-    path: '/Scores',
-    component: Score
-  },
+  /*
   {
     path: '/points',
     component: Points
-  },
+  },*/
+  /*
   {
-    path: '/main map',
+    path: '/main-map',
     component: Map
   },
+  */
   {
-    path: '/Nav end',
+    path: '/end-nav',
     component: Nav_end
   },
+  /*
   {
-    path: '/Teams',
+    path: '/teams',
     component: Teams
-  },
+  },*/
   {
-    path: '/Nav data',
+    path: '/nav-data',
     component: Nav_data
   },
   {
-    path: '/Home',
+    path: '/home',
     component: Home
   },
+  /*
   {
-    path: '/Missions',
+    path: '/missions',
     component: Missions
   }
+  */
 
 ];

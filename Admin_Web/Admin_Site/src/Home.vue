@@ -18,40 +18,50 @@
       </tr>
       <tr>
         <td class = "Fix_Hebrew">
-        קיימות 3 אופציות לאתחול
-          <br>
-            נתוני פעילות
-          <br>
-            קבוצות
-          <br>
-            משימות
+
+            נתוני פעילות - לתת ערכים ראשונים לקבוצות וקבלת קוד קבוצה
+
+
           <br>
         </td>
         <td class = "Fix_Hebrew">
-          קיימות 6 אופציות לניהול
-          <br>
-          שליחת הודעה - ניתן לשלוח הודעה למספר קבוצות
-          <br>
-          טבלת ניקוד - הניקוד הנוכחי של הקבוצות
-          <br>
+
+
           נתוני קבוצה - פרטים על הקבוצות המשחקות
           <br>
-          שתילת נקודה - לתת נקודות לקבוצות
-          <br>
+
           סיום ניווט - לסיים את הניווט ולשלוח את הקבוצות לנקודת סיום
           <br>
-          מפה ראשית - ניתן לראות את כול ראשי הקבוצות ואת המיקום שלהם
 
         </td>
       </tr>
     </table>
+    <b-btn @click = "Start_Game">התחלת ניווט</b-btn>
   </div>
 </template>
 
 <script>
+  import db from './components/FireBase'
+  let StartRef = db.ref('start');
+
 export default {
         name: "Home",
+  methods: {
+    Start_Game: function () {
+      if((!this.$cookies.isKey("Teams_Made"))){
+        alert("קבוצות לא קיימות");
+        return;
+      }
+      let obj = {
+        startGame: 'true'
+      };
+      StartRef.update(obj);
+
+    },
+
+  }
     }
+
 </script>
 
 <style scoped>

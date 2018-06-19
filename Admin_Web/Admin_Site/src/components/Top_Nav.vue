@@ -10,20 +10,19 @@
             </b-nav-item-dropdown>
             <!-- Navbar dropdowns -->
             <b-nav-item-dropdown text="אתחול" right >
-              <b-dropdown-item @click = "$router.push('Nav data')" class = "Fix_Hebrew">נתוני פעילות</b-dropdown-item>
-              <b-dropdown-item @click = "$router.push('Teams')" class = "Fix_Hebrew">קבוצות</b-dropdown-item>
-              <b-dropdown-item @click = "$router.push('Missions')" class = "Fix_Hebrew">משימות</b-dropdown-item>
+              <b-dropdown-item @click = "$router.push('nav-data')" class = "Fix_Hebrew">נתוני פעילות</b-dropdown-item>
+             <!-- <b-dropdown-item @click = "$router.push('teams')" class = "Fix_Hebrew">קבוצות</b-dropdown-item> -->
+              <!-- <b-dropdown-item @click = "$router.push('Missions')" class = "Fix_Hebrew">משימות</b-dropdown-item> -->
             </b-nav-item-dropdown>
             <b-nav-item-dropdown text="ניהול" right>
-              <b-dropdown-item @click = "$router.push('Send Message')" class = "Fix_Hebrew">שליחת הודעה</b-dropdown-item>
-              <b-dropdown-item @click = "$router.push('Scores')" class = "Fix_Hebrew">טבלת ניקוד</b-dropdown-item>
-              <b-dropdown-item @click = "$router.push('Team Data')" class = "Fix_Hebrew">נתוני קבוצה</b-dropdown-item>
-              <b-dropdown-item @click = "$router.push('Points')" class = "Fix_Hebrew">שתילת נקודה</b-dropdown-item>
-              <b-dropdown-item @click = "$router.push('Nav end')" class = "Fix_Hebrew">סיום ניווט</b-dropdown-item>
-              <b-dropdown-item @click = "$router.push('main map')" class = "Fix_Hebrew">מפה ראשית</b-dropdown-item>
+              <!-- <b-dropdown-item @click = "$router.push('send_message')" class = "Fix_Hebrew">שליחת הודעה</b-dropdown-item> -->
+              <b-dropdown-item @click = "$router.push('team-data')" class = "Fix_Hebrew">נתוני קבוצה</b-dropdown-item>
+              <!-- <b-dropdown-item @click = "$router.push('points')" class = "Fix_Hebrew">שתילת נקודה</b-dropdown-item> -->
+              <b-dropdown-item @click = "$router.push('end-nav')" class = "Fix_Hebrew">סיום ניווט</b-dropdown-item>
+              <!-- <b-dropdown-item @click = "$router.push('main-map')" class = "Fix_Hebrew">מפה ראשית</b-dropdown-item> -->
             </b-nav-item-dropdown>
 
-            <b-nav-item @click = "$router.push('Home')">בית</b-nav-item>
+            <b-nav-item @click = "$router.push('home')">בית</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -35,15 +34,15 @@
 </template>
 
 <script>
-    export default {
-        name: "Top_Nav",
-        methods: {
-          Log_out: function () {
-            this.$cookies.remove("User_Logged");
-           this.$router.push('/');
-          }
-        }
+  export default {
+    name: "Top_Nav",
+    methods: {
+      Log_out: function () {
+        this.$cookies.remove("User_Logged");
+        this.$router.push('/');
+      }
     }
+  }
 </script>
 
 <style scoped>

@@ -2,6 +2,11 @@
   <div id="app">
 
     <Top_Nav></Top_Nav>
+    <!--
+    This site was created by Mercury Finnegan.
+    Final production for release 20 of June 2018.
+    All rights of this code belong to Mercury Finnegan.
+    -->
     <router-view></router-view>
 
   </div>
@@ -47,6 +52,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-color: #2bb3ce;
+  background-color:#6fd1d6;
 }
 </style>

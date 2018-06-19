@@ -1,7 +1,6 @@
 import Firebase from 'firebase'
 
-
-let config = {
+let Team_config = {
 
   apiKey: "AIzaSyB_4Q03kH4GClmLrBeESuhzuxgAICZ9MUk",
   authDomain: "teams-yedidim.firebaseapp.com",
@@ -12,8 +11,8 @@ let config = {
 
 };
 
-let app = Firebase.initializeApp(config);
-let db = app.database();
+let team_app = Firebase.initializeApp(Team_config, "team_app" );
+let db = team_app.database();
 
 export default db
 

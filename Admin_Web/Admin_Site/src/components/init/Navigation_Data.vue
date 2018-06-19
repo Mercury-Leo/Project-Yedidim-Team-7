@@ -4,54 +4,92 @@
     <p>
       מלאו את הפרטים של הניווט בשביל להתחיל משחק.
     </p>
-    <form>
 
-      <input type = "number" v-model="Team_num.Team_Count" >
-      <label :for = "Team_num.Team_Count" >כמה קבוצות משתתפות</label><br>
-      <input type = "time" v-model="navigation_time.end_time">
-      <label :for = "navigation_time.end_time">זמן סיום נייוט</label><br>
-      <input type = "text" v-model="instructor.instructor_name">
-      <label :for = "instructor.instructor_name" >שם מדריך</label><br>
-      <input type = "number" v-model="instructor.instructor_phone">
-      <label :for = "instructor.instructor_phone">טלפון מדריך</label><br>
-      <input type = "number" v-model="Diff.difficult">
-      <label :for = "Diff.difficult" >רמת קושי</label><br>
-      <input type = "text" v-model="school.school_name">
-      <label :for = "school.school_name" >שם בית הספר</label><br>
-      <p>{{navigation_area.area}}</p>
+    <table align="center">
+      <tr >
+        <td>
+          <input type = "number" v-model="Team_num.Team_Count" >
+        </td>
+        <td>
+          <label :for = "Team_num.Team_Count" >כמה קבוצות משתתפות</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type = "time" v-model="navigation_time.end_time">
 
-      <select>
-        <option value = "jer" >ירושלים</option>
-        <option value = "negev">נגב</option>
-      </select>
-      <label :for="navigation_area.area" >אזור ניווט</label>
-    </form>
+        </td>
+        <td>
+          <label :for = "navigation_time.end_time">זמן סיום נייוט</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type = "text" v-model="instructor.instructor_name">
+        </td>
+        <td>
+          <label :for = "instructor.instructor_name" >שם מדריך</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type = "number" v-model="instructor.instructor_phone">
+        </td>
+        <td>
+          <label :for = "instructor.instructor_phone">טלפון מדריך</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type = "number" v-model="Diff.difficult">
+        </td>
+        <td>
+          <label :for = "Diff.difficult" >רמת קושי</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type = "text" v-model="school.school_name">
+        </td>
+        <td>
+          <label :for = "school.school_name" >שם בית הספר</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <select v-model = "navigation_area.area">
+            <option>azrieli</option>
+            <option>jerusalem</option>
+          </select>
+        </td>
+        <td>
+          <label :for="navigation_area.area" >אזור ניווט</label>
+        </td>
+      </tr>
+    </table>
 
-    <b-button @click = push_init >add</b-button>
-    <div v-for = "teamKey in TeamArray">
-      {{teamKey['.key']}}
-      <p @click = Create_Teams(teamKey)>התחל ניווט </p>
-    </div>
-
+    <b-button @click = push_init >תחילת משחק</b-button>
 
   </div>
 </template>
 
 <script>
-  import Vue from 'vue'
+  //mdb.ref('/').child("negev").set({ }) ---> setting a child named negev in parent node
 
   import db from '../FireBase'
+  import mdb from '../MissionFireBase'
 
   let TeamRef = db.ref('Teams');
+  let StartRef = db.ref('start');
+
+  let  team_key_list = [];
+  let random_num = [];
 
   export default {
     name: "Navigation_Data",
     firebase: {
       TeamArray: db.ref('Teams'),
-      TeamObject: {
-        source: db.ref('Teams'),
-        asObject: true
-      }
+      MissionArray: mdb.ref('/')
     },
     data(){
       return {
@@ -60,7 +98,7 @@
         },
         instructor: {
           instructor_name: '#Do_not_Use_this_name',
-          instructor_phone: "0000"
+          instructor_phone: "0"
         },
         school: {
           school_name: 'yedidim'
@@ -73,16 +111,59 @@
         },
         Diff: {
           difficult: 0
-        }
+        },
+
       }
     },
     methods: {
       push_init: function () {
+        if(this.Create_Start()){
+          if(this.Create_Teams()){
+            this.Create_Cookie();
+            this.$router.push('Home')
+          }
+        }
+      },
+      Create_Start: function(){
+        let time_string = this.$data.navigation_time.end_time;
+        time_string = time_string.replace(':','');
+        if(!this.$data.instructor.instructor_name.localeCompare('#Do_not_Use_this_name')){
+          alert("נא בחר בשם מדריך אחר.");
+          return false;
+        }
+        if(!this.$data.instructor.instructor_phone.localeCompare("0") || !this.$data.instructor.instructor_phone.localeCompare("") ){
+          alert("טלפון מדריך לא יכול להיות ריק או 0");
+          return false;
+        }
+        if(!this.$data.navigation_area.area.localeCompare('')){
+          alert("יש לבחור אזור ניווט");
+          return false;
+        }
+        let start_init = {
+          numOfTeam: this.$data.Team_num.Team_Count,
+          difficult: this.$data.Diff.difficult,
+          startGame: "false",
+          admin: {
+            name: this.$data.instructor.instructor_name,
+            num: this.$data.instructor.instructor_phone
+          },
+          finish: {
+            time: time_string + "00"
+          },
+          city: "https://missions-yedidim.firebaseio.com/" + this.$data.navigation_area.area
+        };
+        StartRef.set(start_init);
+        return true;
+      },
+      Create_Teams: function () {
+        this.uniqueNumber();
         let i = 0;
         let team_code_rand = 0;
         if(this.$data.Team_num.Team_Count > 0 && this.$data.Team_num.Team_Count < 51 && this.$data.Diff.difficult >= 0 && this.$data.Diff.difficult <4){
-          for( i ; i < this.$data.Team_num.Team_Count; i++) {
-            team_code_rand = (Math.random()*100000 | 0);
+
+          for( i = 0 ; i < this.$data.Team_num.Team_Count; i++) {
+
+            team_code_rand = random_num[i];
 
             this.$firebaseRefs.TeamArray.push({
               "done": 0,
@@ -99,21 +180,64 @@
           }
 
         }
-
-        //this.$router.push('Missions')
-      },
-      Create_Teams: function (team) {
-        let i = 0;
-        //let Mission_Array = [{1: "no"}, {2: "no"},{3: "no"},{4: "no"},{5: "no"},{6: "no"},{7: "no"},{8: "no"},{9: "no"},{10: "no"},{11: "no"},{12: "no"},{13: "no"},{14: "no"},{15: "no"},{16: "no"},{17: "no"},{18: "no"},{19: "no"},{20: "no"},{21: "no"},{22: "no"},{23: "no"},{24: "no"},{25: "no"},{26: "no"},{27: "no"},{28: "no"},{29: "no"},{30: "no"},{31: "no"},{32: "no"},{33: "no"},{34: "no"},{35: "no"},{36: "no"},{37: "no"},{38: "no"},{39: "no"},{40: "no"},{41: "no"},{42: "no"},{43: "no"},{44: "no"},{45: "no"},{46: "no"},{47: "no"},{48: "no"},{49: "no"},{50: "no"},];
-        let Team_obj = [];
-        for( i ; i < this.$data.Team_num.Team_Count; i++) {
-          Team_obj.push({
-              "finish": "no"
-          });
+        else {
+          alert("ניתן לייצר עד 50 קבוצות ורמת קושי בין 0 ל3");
+          return false;
         }
-        TeamRef.child(team['.key']).child('mission').set(Team_obj);
+
+        this.Get_Keys();
+
+        let Team_obj = [];
+        let mission_ref = mdb.ref(this.$data.navigation_area.area).child("num");
+
+        mission_ref.on("value", function(snapshot){
+          for( i = 0; i < snapshot.val(); i++) {
+            Team_obj.push({
+              "finish": "no"
+            });
+          }
+          for(i = 0; i< team_key_list.length; i++){
+            TeamRef.child(team_key_list[i]).child('mission').set(Team_obj);
+          }
+        });
+        return true;
+      },
+      Get_Keys: function () {
+        team_key_list = [];
+        this.$firebaseRefs.TeamArray.once("value",function(snapshot){
+          snapshot.forEach(function(child){
+            team_key_list.push(child.key);
+          })
+        });
+      },
+      uniqueNumber: function () {
+        let i = 0;
+        for(i; i< this.$data.Team_num.Team_Count; i++){
+          let randomnumber = Math.floor(Math.random()*100000) + 1;
+          if(random_num.indexOf(randomnumber) > -1 ) continue;
+          if(randomnumber.toString().length != 5){
+            i--;
+          }
+          else{
+            random_num[random_num.length] = randomnumber;
+          }
+
+        }
+      },
+      Create_Cookie: function () {
+        this.$cookies.set("Teams_Made","27j_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX","0");
+      },
+      Teams_Created: function(){
+        if((this.$cookies.isKey("Teams_Made"))){
+          alert("קבוצות כבר קיימות");
+          this.$router.push('/Home');
+        }
       }
-    },
+      },
+    beforeMount(){
+      this.Teams_Created();
+    }
+
   }
 </script>
 
