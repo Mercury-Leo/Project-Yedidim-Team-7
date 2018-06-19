@@ -30,18 +30,20 @@ Vue.mixin({
     }
   },
 
+
   beforeMount(){
 
     this.Is_Logged();
     //this.Load_page();
 
-  }
+  },
 
 });
 export default {
   name: 'App',
-  components: {Top_Nav}
+  components: {Top_Nav},
 }
+
 </script>
 
 <style>
