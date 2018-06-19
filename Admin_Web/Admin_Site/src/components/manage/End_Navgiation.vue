@@ -3,7 +3,6 @@
 
     <b-button @click = "erase_start">מחיקת ניווט</b-button>
     <b-button @click = "delete_teams">מחיקת קבוצות</b-button>
-    <b-button >סיים ניווט</b-button>
   </div>
 </template>
 

@@ -29,7 +29,7 @@
         Log_User: function() {
           if(this.Server_name == this.User_name && this.Server_pass == this.User_pass){
             this.$cookies.set("User_Logged","25j_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX","0");
-            this.$router.push('Home');
+            this.$router.push('home');
             return true;
           }
           else{
@@ -39,7 +39,7 @@
         },
         Is_Logged:function () {
           if((this.$cookies.isKey("User_Logged"))){
-            this.$router.push('/Home');
+            this.$router.push('/home');
           }
         }
 

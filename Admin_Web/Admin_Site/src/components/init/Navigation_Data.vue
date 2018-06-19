@@ -142,7 +142,7 @@
         let start_init = {
           numOfTeam: this.$data.Team_num.Team_Count,
           difficult: this.$data.Diff.difficult,
-          startGame: "true",
+          startGame: "false",
           admin: {
             name: this.$data.instructor.instructor_name,
             num: this.$data.instructor.instructor_phone
@@ -160,7 +160,7 @@
         let i = 0;
         let team_code_rand = 0;
         if(this.$data.Team_num.Team_Count > 0 && this.$data.Team_num.Team_Count < 51 && this.$data.Diff.difficult >= 0 && this.$data.Diff.difficult <4){
-          console.log(this.$data.Team_num.Team_Count);
+
           for( i = 0 ; i < this.$data.Team_num.Team_Count; i++) {
 
             team_code_rand = random_num[i];

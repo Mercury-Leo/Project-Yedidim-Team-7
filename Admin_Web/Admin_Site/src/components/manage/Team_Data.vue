@@ -2,7 +2,7 @@
   <div>
 
     <p>מספר קבוצות פעילות</p>
-    <p>{{counter}}</p>
+    <p>{{Team_Num}}</p>
 
   <table id ="table_style" align="center">
     <tr>
@@ -22,6 +22,7 @@
       <td>{{team['point']}}</td>
       <td>{{team['teamCode']}}</td>
       <td>{{team['teamName']}}</td>
+
     </tr>
   </table>
   </div>
@@ -34,15 +35,17 @@
         name: "Team_Data",
       firebase: {
         Team_Array: firebase.ref('Teams'),
+        Team_Counter: firebase.ref('start')
       },
-      method: {
+      methods: {
           Get_Team_Num: function () {
-            let Team_Count = firebase.ref('start').child("numOfTeam");
-            Team_Count.on("value", function(snapshot){
-              this.$data.Team_Num = snapshot.val();
-            })
+            let Team_number = 0;
+            this.$firebaseRefs.Team_Counter.child('numOfTeam').on("value", function(snapshot){
+              Team_number = snapshot.val();
+            } );
 
-          }
+            this.$data.Team_Num = Team_number;
+          },
       },
       data(){
           return{
@@ -50,6 +53,15 @@
             counter: 0
           }
       },
+      mounted(){
+          this.Get_Team_Num();
+      },
+      beforeUpdate(){
+        this.Get_Team_Num();
+      },
+      beforeMount(){
+        this.Get_Team_Num();
+      }
 
 
     }
