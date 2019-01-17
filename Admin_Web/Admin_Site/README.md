@@ -1,6 +1,6 @@
 # admin_site
 
-> Admin web control panel
+> Admin website control panel
 
 ## Build Setup
 
@@ -20,5 +20,9 @@ npm run build --report
 # deploy site to firebase and on the air
 firebade deploy
 ```
+
+### Production site
+[Admin Site](https://yedidim-a05ec.firebaseapp.com/)
+
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

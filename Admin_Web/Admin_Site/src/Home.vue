@@ -1,6 +1,7 @@
 <template>
   <div>
 
+
     <p >
       האתר מחולק לשתי חלקים, ניהול ואתחול<br>
       להתחיל את הניווט יש קודם למלא את הפרטים בדף האתחול
@@ -46,6 +47,7 @@
 
 export default {
         name: "Home",
+
   methods: {
     Start_Game: function () {
       if((!this.$cookies.isKey("Teams_Made"))){
@@ -59,7 +61,9 @@ export default {
 
     },
 
-  }
+
+  },
+
     }
 
 </script>

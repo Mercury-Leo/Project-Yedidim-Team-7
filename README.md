@@ -57,5 +57,5 @@ The [Kanban](https://github.com/Mercury-Leo/Yedidim-Team-7/projects/1) of the pr
 
 
 ### Next Iteration Planning:
-#### [Inter2](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#next-iteration-planning)  
+#### [Inter2](https://github.com/Mercury-Leo/Yedidim-Team-7/wiki/Iter1---MVP#next-iteration-planning)     
 

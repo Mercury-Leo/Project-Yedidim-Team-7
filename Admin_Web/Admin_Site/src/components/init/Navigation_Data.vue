@@ -97,7 +97,7 @@
           end_time: "00:00"
         },
         instructor: {
-          instructor_name: '#Do_not_Use_this_name',
+          instructor_name: 'שם מדריך',
           instructor_phone: "0"
         },
         school: {
@@ -127,7 +127,7 @@
       Create_Start: function(){
         let time_string = this.$data.navigation_time.end_time;
         time_string = time_string.replace(':','');
-        if(!this.$data.instructor.instructor_name.localeCompare('#Do_not_Use_this_name')){
+        if(!this.$data.instructor.instructor_name.localeCompare('שם מדריך')){
           alert("נא בחר בשם מדריך אחר.");
           return false;
         }
@@ -159,7 +159,7 @@
         this.uniqueNumber();
         let i = 0;
         let team_code_rand = 0;
-        if(this.$data.Team_num.Team_Count > 0 && this.$data.Team_num.Team_Count < 51 && this.$data.Diff.difficult >= 0 && this.$data.Diff.difficult <4){
+        if(this.$data.Team_num.Team_Count > 0 && this.$data.Team_num.Team_Count < 51 && this.$data.Diff.difficult >= 0 && this.$data.Diff.difficult <3){
 
           for( i = 0 ; i < this.$data.Team_num.Team_Count; i++) {
 
@@ -181,7 +181,7 @@
 
         }
         else {
-          alert("ניתן לייצר עד 50 קבוצות ורמת קושי בין 0 ל3");
+          alert("ניתן לייצר עד 50 קבוצות ורמת קושי בין 0 ל2");
           return false;
         }
 
@@ -212,13 +212,18 @@
       },
       uniqueNumber: function () {
         let i = 0;
+        let single = 0;
+        let multi = 0;
         for(i; i< this.$data.Team_num.Team_Count; i++){
-          let randomnumber = Math.floor(Math.random()*100000) + 1;
+          let randomnumber = Math.floor(Math.random()*10000) + 1;
           if(random_num.indexOf(randomnumber) > -1 ) continue;
-          if(randomnumber.toString().length != 5){
+          if(randomnumber.toString().length != 4 || randomnumber == (10000)){
             i--;
           }
           else{
+            single = Math.floor(Math.random()* 9) + 1;
+            multi = single.toString() + randomnumber.toString();
+            randomnumber = parseInt(multi);
             random_num[random_num.length] = randomnumber;
           }
 
